@@ -1,0 +1,270 @@
+<div class="row">
+  <div class="col col-12 col-md-6 mb-4">
+    <form
+      [formGroup]="patientForm"
+      novalidate
+      class="new-doctor-form"
+      (ngSubmit)="saveData(patientForm)"
+      *ngIf="patientInfo"
+    >
+      <tc-form-group>
+        <tc-form-label>Picto</tc-form-label>
+        <input type="file" accept="image/*" (change)="onFileChanged($event)" #fileInput hidden>
+
+        <div class="d-flex align-items-center">
+          <tc-avatar [src]="currentAvatar" [size]="100"></tc-avatar>
+          <button
+            tc-button
+            [type]="'button'"
+            [afterIcon]="'icofont-ui-user'"
+            [view]="'accent'"
+            [outline]="true"
+            (click)="fileInput.click()"
+          >
+            Modifier le pictogramme
+          </button>
+        </div>
+      </tc-form-group>
+
+      <tc-form-group>
+        <tc-form-label>ID</tc-form-label>
+        <tc-input [placeholder]="'Id'" formControlName="id"></tc-input>
+      </tc-form-group>
+
+      <tc-form-group>
+        <tc-form-label>Libellé</tc-form-label>
+        <tc-input [placeholder]="'Name'" formControlName="name" ></tc-input>
+      </tc-form-group>
+
+      <div class="row">
+        <div class="col-12 col-sm-6">
+          <tc-form-group>
+            <tc-form-label>REf PE</tc-form-label>
+            <tc-input [placeholder]="'Ref PE'" formControlName="PE" [type]="'string'"></tc-input>
+          </tc-form-group>
+        </div>
+
+        <div class="col-12 col-sm-6">
+          <tc-form-group>
+            <tc-form-label>REF CAS</tc-form-label>
+            <tc-input [placeholder]="'REF CAS'" formControlName="CAS" [type]="'string'"></tc-input>
+          </tc-form-group>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-sm-6">
+          <tc-form-group>
+            <tc-form-label>Nom fournisseur</tc-form-label>
+            <tc-input [placeholder]="'Nom fournisseur'" formControlName="Nomf" [type]="'string'"></tc-input>
+          </tc-form-group>
+        </div>
+
+        <div class="col-12 col-sm-6">
+          <tc-form-group>
+            <tc-form-label>REF fournisseur</tc-form-label>
+            <tc-input [placeholder]="'Reference fournisseur'" formControlName="Four" [type]="'string'"></tc-input>
+          </tc-form-group>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-sm-6">
+          <tc-form-group>
+            <tc-form-label>REf LIMS</tc-form-label>
+            <tc-input [placeholder]="'REf LIMS'" formControlName="Lims" [type]="'string'"></tc-input>
+          </tc-form-group>
+        </div>
+
+        <div class="col-12 col-sm-6">
+          <tc-form-group>
+            <tc-form-label> Ref SP</tc-form-label>
+            <tc-input [placeholder]="'Reference SP'" formControlName="SP" [type]="'string'"></tc-input>
+          </tc-form-group>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-sm-6">
+          <tc-form-group>
+            <tc-form-label>Type</tc-form-label>
+            <tc-input [placeholder]="'Type'" formControlName="Type" [type]="'string'"></tc-input>
+          </tc-form-group>
+        </div>
+
+        <div class="col-12 col-sm-6">
+          <tc-form-group>
+            <tc-form-label>Catégorie</tc-form-label>
+            <tc-input [placeholder]="'Catégorie'" formControlName="Categorie" [type]="'string'"></tc-input>
+          </tc-form-group>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-sm-6">
+          <tc-form-group>
+            <tc-form-label>Type de commande</tc-form-label>
+            <tc-input [placeholder]="'Type de commande'" formControlName="Typedecommande" [type]="'string'"></tc-input>
+          </tc-form-group>
+        </div>
+
+        <div class="col-12 col-sm-6">
+          <tc-form-group>
+            <tc-form-label>Unité logistique</tc-form-label>
+            <tc-input [placeholder]="'Unité logistique'" formControlName="Unilog" [type]="'string'"></tc-input>
+          </tc-form-group>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-sm-6">
+          <tc-form-group>
+            <tc-form-label>Stock mini</tc-form-label>
+            <tc-input [placeholder]="'Stock mini'" formControlName="Smini" [type]="'string'"></tc-input>
+          </tc-form-group>
+        </div>
+
+        <div class="col-12 col-sm-6">
+          <tc-form-group>
+            <tc-form-label>Quantité</tc-form-label>
+            <tc-input [placeholder]="'Quantité'" formControlName="Quantity" [type]="'string'"></tc-input>
+          </tc-form-group>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-sm-6">
+          <tc-form-group>
+            <tc-form-label>Contrainte de stockage</tc-form-label>
+            <tc-input [placeholder]="'Contrainte de stockage'" formControlName="Contraintedestockage" [type]="'string'"></tc-input>
+          </tc-form-group>
+        </div>
+
+        <div class="col-12 col-sm-6">
+          <tc-form-group>
+            <tc-form-label>Lieu de stockage</tc-form-label>
+            <tc-input [placeholder]="'Lieu de stockage'" formControlName="Lieuxdestockage" [type]="'string'"></tc-input>
+          </tc-form-group>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-sm-6">
+          <tc-form-group>
+            <tc-form-label>Emplacement</tc-form-label>
+            <tc-input [placeholder]="'Emplacement'" formControlName="Emplacement" [type]="'string'"></tc-input>
+          </tc-form-group>
+        </div>
+
+        <div class="col-12 col-sm-6">
+          <tc-form-group>
+            <tc-form-label>Etat</tc-form-label>
+            <tc-input [placeholder]="'état'" formControlName="Etat" [type]="'string'"></tc-input>
+          </tc-form-group>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-sm-6">
+          <tc-form-group>
+            <tc-form-label>Date de mise à jour FDS</tc-form-label>
+            <tc-input [placeholder]="'date de mise à jour de fiche de sécurité'" formControlName="Datemajfds" [type]="'number'"></tc-input>
+          </tc-form-group>
+        </div>
+
+        <div class="col-12 col-sm-6">
+          <tc-form-group>
+            <tc-form-label>DLV aprés ouvérture</tc-form-label>
+            <tc-input [placeholder]="'DLV aprés ouvérture'" formControlName="Dlvao" [type]="'string'"></tc-input>
+          </tc-form-group>
+        </div>
+      </div>
+
+      <div class="row">
+  <!--       <div class="col-12 col-sm-6">
+          <tc-form-group>
+            <tc-form-label>Risque 1 </tc-form-label>
+            <tc-select [placeholder]="'Risque 1'" formControlName="age" [options]="'gender'"></tc-select>
+          </tc-form-group>
+        </div> -->
+
+     <!--    <div class="col-12 col-sm-6">
+          <tc-form-group>
+            <tc-form-label>Risque 2</tc-form-label>
+            <tc-select [placeholder]="'Risque 2 '" formControlName="gender" [options]="gender"></tc-select>
+          </tc-form-group>
+        </div> -->
+      </div>
+      <div class="row">
+        <div class="col-12 col-sm-6">
+          <tc-form-group>
+            <tc-form-label>Risque1</tc-form-label>
+            <tc-input [placeholder]="'Risque 3'" formControlName="age"[type]="'string'"></tc-input>
+          </tc-form-group>
+        </div>
+
+        <div class="col-12 col-sm-6">
+          <tc-form-group>
+            <tc-form-label>Risque 4 </tc-form-label>
+            <tc-input [placeholder]="'Risque 4'" formControlName="gender" [type]="'string'"></tc-input>
+          </tc-form-group>
+        </div>
+      </div>
+      <tc-form-group>
+        <tc-form-label>Lien FDS</tc-form-label>
+        <tc-input [placeholder]="'Lien FDS'" formControlName="number"></tc-input>
+      </tc-form-group>
+
+      <tc-form-group>
+        <tc-form-label>Remarques</tc-form-label>
+        <tc-textarea [placeholder]="'Remarques à saisir'" formControlName="address"></tc-textarea>
+      </tc-form-group>
+
+    <!--   <tc-form-group>
+        <tc-form-label>Last visit</tc-form-label>
+        <tc-input [placeholder]="'Last visit'" formControlName="lastVisit" [readonly]="true"></tc-input>
+      </tc-form-group> -->
+
+      <tc-form-group>
+        <tc-form-label>Status</tc-form-label>
+        <tc-input [placeholder]="'Status'" formControlName="status" [type]="'string'"></tc-input>
+      </tc-form-group> 
+
+      <button tc-button [view]="'success'" [block]="true" [disabled]="!changes || patientForm.invalid">
+        Enregistrer
+      </button>
+    </form>
+  </div>
+
+</div>
+<!-- 
+<tc-card [title]="'Billings'" class="mb-0 mt-4">
+  <tc-table [rows]="billings" [hovered]="true" [headerBgColor]="'#336cfb'" [headerColor]="'#fff'">
+    <tc-table-col [columnTitle]="'Bill NO'" [columnName]="'billNo'" [enableSorting]="true">
+      <ng-template #tableTDTemplate let-value>
+        <span [tcColor]="'#a5a5a5'">{{ value }}</span>
+      </ng-template>
+    </tc-table-col>
+    <tc-table-col [columnTitle]="'Patient'" [columnName]="'patient'" [enableSorting]="true">
+      <ng-template #tableTDTemplate let-value>
+        <strong>{{ value }}</strong>
+      </ng-template>
+    </tc-table-col>
+    <tc-table-col [columnTitle]="'Doctor'" [columnName]="'doctor'" [enableSorting]="true">
+      <ng-template #tableTDTemplate let-value>
+        <strong>{{ value }}</strong>
+      </ng-template>
+    </tc-table-col>
+    <tc-table-col [columnTitle]="'Date'" [columnName]="'billDate'" [enableSorting]="true">
+      <ng-template #tableTDTemplate let-value>
+        <span class="nowrap" [tcColor]="'#a5a5a5'">{{ value }}</span>
+      </ng-template>
+    </tc-table-col>
+    <tc-table-col [columnTitle]="'Charges'" [columnName]="'charges'" [enableSorting]="true"></tc-table-col>
+    <tc-table-col [columnTitle]="'Tax'" [columnName]="'tax'" [enableSorting]="true"></tc-table-col>
+    <tc-table-col [columnTitle]="'Discount'" [columnName]="'discount'" [enableSorting]="true"></tc-table-col>
+    <tc-table-col [columnTitle]="'Total'" [columnName]="'total'" [enableSorting]="true">
+      <ng-template #tableTDTemplate let-value>
+        <strong>{{ value }}</strong>
+      </ng-template>
+    </tc-table-col>
+  </tc-table>
+</tc-card> -->

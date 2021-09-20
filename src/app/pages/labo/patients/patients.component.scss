@@ -1,0 +1,15 @@
+@import '~src/assets/scss/variables';
+
+:host {
+  .address-col {
+    min-width: 10px;
+  }
+  .actions {
+    display: flex;
+    margin: -$module-rem / 4;
+
+    .tc-btn {
+      margin: $module-rem / 4;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<h2 class="h4 mt-0 mb-1">Gestion des réactifs du laboratoire CQL </h2>
+<p [tcColor]="'#8f8f90'">Authentification</p>
+
+<form [formGroup]="loginForm" novalidate>
+    <tc-form-group>
+      <tc-input [placeholder]="'Login'" formControlName="login"></tc-input>
+    </tc-form-group>
+  
+    <tc-form-group>
+      <tc-input [placeholder]="'Mot de passe'" [type]="'password'" formControlName="pass"></tc-input>
+    </tc-form-group>
+  
+    <!-- <tc-form-group>
+      <tc-switcher [value]="true">Remember me</tc-switcher>
+    </tc-form-group> -->
+  
+    <div class="actions justify-content-between">
+      <button tc-button [view]="'accent'" [beforeIcon]="'icofont-login'">
+        Se connecter
+      </button>
+    </div>
+  </form>
+
+<p class="mt-5 mb-1"><a (click)="$event.preventDefault()" href="#">Mot de passe oublié ?</a></p>
+<!-- <p>Don't have an account? <a [routerLink]="['../', 'sign-up']">Sign up!</a></p> -->
